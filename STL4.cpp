@@ -17,9 +17,9 @@ int main () {
   short n = 0;
   std::cin >> n;
   std::vector <Point> mass(n);
-  for (int i = 0; i < n; i++) {
-    std::cin >> mass[i].x >> mass[i].y;
-    mass[i].distance = std::sqrt(mass[i].x * mass[i].x + mass[i].y * mass[i].y);
+  for (auto &i : mass) {
+    std::cin >> i.x >> i.y;
+    i.distance = std::sqrt(i.x * i.x + i.y * i.y);
   }
   std::sort(mass.begin(), mass.end(), compare);
   for (auto i : mass) {
